@@ -1,0 +1,19 @@
+.main-sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 280px;
+  z-index: 810;
+  background-color: #354051;
+  overflow-x: hidden;
+}
+
+.sidebar-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  padding: 1rem 0.5rem;
+  text-align: center;
+  margin-bottom: 5rem;
+}

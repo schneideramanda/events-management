@@ -1,0 +1,36 @@
+.event {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  margin-bottom: 20px;
+  margin-right: 40px;
+}
+
+.event-title {
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.event-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.event-label {
+  color: #666;
+}
+
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.event-actions {
+  display: flex;
+  gap: 0.5rem;
+  cursor: pointer;
+}
