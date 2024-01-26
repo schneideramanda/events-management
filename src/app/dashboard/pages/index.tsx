@@ -1,9 +1,8 @@
 import EventsList from '../components/events/EventsList';
-import './index.css';
 
 const Dashboard = () => {
   return (
-    <section className="dashboard">
+    <section className="dashboard" style={{ width: '100%' }}>
       <div className="content-container">
         <EventsList />
       </div>

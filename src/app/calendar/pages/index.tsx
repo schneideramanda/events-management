@@ -1,6 +1,5 @@
 import { Calendar as BigCalendar, luxonLocalizer, Views } from 'react-big-calendar';
 import { DateTime, Settings } from 'luxon';
-import './index.css';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import { useContext, useEffect, useMemo } from 'react';
 import { Event, EventsContext } from '../../contexts/EventsContext';
@@ -37,7 +36,7 @@ const Calendar = () => {
   }, []);
 
   return (
-    <div className="calendar">
+    <div className="calendar" style={{ width: '100%' }}>
       <BigCalendar
         defaultDate={defaultDate}
         defaultView={Views.MONTH}

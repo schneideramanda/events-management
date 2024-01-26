@@ -2,6 +2,8 @@ import Icon from '@material-ui/core/Icon';
 import { Link, useLocation } from 'react-router-dom';
 import { MenuItemProps } from '../../services/handleNav';
 import './NavItem.css';
+import { useContext } from 'react';
+import { SidebarContext } from '../../../contexts/SidebarContext';
 
 interface NavItemProps {
   item: MenuItemProps;
@@ -9,6 +11,7 @@ interface NavItemProps {
 
 const NavItem = ({ item }: NavItemProps) => {
   const location = useLocation();
+  const { isSidebarOpen } = useContext(SidebarContext);
 
   let pathMatch = false;
 
@@ -21,10 +24,10 @@ const NavItem = ({ item }: NavItemProps) => {
   }
 
   return (
-    <li className="nav-item">
-      <Icon className="item-icon">{item.icon}</Icon>
+    <li className={`nav-item ${isSidebarOpen ? '' : 'closed'}`}>
       <Link to={item.path} className={`nav-link ${pathMatch ? 'active' : ''}`}>
-        {item.title}
+        <Icon className="item-icon">{item.icon}</Icon>
+        {isSidebarOpen ? item.title : ''}
       </Link>
     </li>
   );

@@ -3,14 +3,17 @@ import MainLayout from '../common/components/menu/MainLayout';
 import Dashboard from '../dashboard/pages';
 import { EventsProvider } from '../contexts/EventsContext';
 import Calendar from '../calendar/pages';
+import { SidebarProvider } from '../contexts/SidebarContext';
 
 const routes: RouteObject[] = [
   {
     path: '*',
     element: (
-      <EventsProvider>
-        <MainLayout />
-      </EventsProvider>
+      <SidebarProvider>
+        <EventsProvider>
+          <MainLayout />
+        </EventsProvider>
+      </SidebarProvider>
     ),
     children: [
       {

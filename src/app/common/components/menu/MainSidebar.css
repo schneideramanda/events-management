@@ -7,6 +7,27 @@
   z-index: 810;
   background-color: #354051;
   overflow-x: hidden;
+  transition: width 0.3s ease;
+}
+
+.main-sidebar.closed {
+  width: 50px;
+}
+
+.sidebar-action {
+  background-color: #495362;
+  padding: 1rem;
+}
+
+.sidebar-icon {
+  color: #fff;
+  cursor: pointer;
+}
+
+.sidebar-icon.closed {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .sidebar-title {
@@ -15,5 +36,9 @@
   color: #fff;
   padding: 1rem 0.5rem;
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
+}
+
+.sidebar-title.closed {
+  display: none;
 }

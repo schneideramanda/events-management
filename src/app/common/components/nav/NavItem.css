@@ -1,12 +1,17 @@
 .nav-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
   margin: 20px 10px;
   padding: 10px 15px;
 }
 
+.nav-item.closed {
+  margin: 20px auto;
+  padding: 10px auto;
+}
+
 .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   color: #c2c5ca;
   font-weight: 400;
   text-decoration: none;
