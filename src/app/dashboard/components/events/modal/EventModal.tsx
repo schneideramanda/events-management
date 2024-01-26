@@ -3,6 +3,8 @@ import './EventModal.css';
 import Button from '../../../../common/components/button/Button';
 import useEventModal from '../../../hooks/useEventModal';
 import { Event } from '../../../../contexts/EventsContext';
+import { useContext } from 'react';
+import { SidebarContext } from '../../../../contexts/SidebarContext';
 
 interface EventModalProps {
   type: 'add' | 'edit';
@@ -12,19 +14,31 @@ interface EventModalProps {
 }
 
 const EventModal = ({ type, values, isOpen, closeModal }: EventModalProps) => {
+  const { isMobile } = useContext(SidebarContext);
   const { handleAddEvent, handleEditEvent } = useEventModal(closeModal);
 
-  const customStyles = {
-    content: {
-      top: '50%',
-      left: '57%',
-      right: 'auto',
-      bottom: 'auto',
-      transform: 'translate(-50%, -50%)',
-      minWidth: '400px',
-      minHeight: '200px',
-    },
-  };
+  const customStyles = isMobile
+    ? {
+        content: {
+          top: '40px',
+          left: '0%',
+          right: 'auto',
+          bottom: 'auto',
+          minWidth: '90%',
+          minHeight: '100%',
+        },
+      }
+    : {
+        content: {
+          top: '50%',
+          left: '57%',
+          right: 'auto',
+          bottom: 'auto',
+          transform: 'translate(-50%, -50%)',
+          minWidth: '400px',
+          minHeight: '200px',
+        },
+      };
 
   return (
     <Modal isOpen={isOpen} ariaHideApp={false} style={customStyles}>

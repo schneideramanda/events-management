@@ -6,12 +6,12 @@ import { SidebarContext } from '../../../contexts/SidebarContext';
 
 const MainLayout = () => {
   const location = useLocation();
-  const { isSidebarOpen } = useContext(SidebarContext);
+  const { isSidebarOpen, isMobile } = useContext(SidebarContext);
 
   if (location.pathname === '/') return <Navigate to="/dashboard" />;
 
   return (
-    <main className={`main-layout ${isSidebarOpen ? '' : 'closed'}`}>
+    <main className={`main-layout ${isSidebarOpen ? '' : 'closed'} ${isMobile ? 'mobile' : ''}`}>
       <MainSidebar />
       <Outlet />
       <ScrollRestoration />

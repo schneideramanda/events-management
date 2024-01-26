@@ -3,6 +3,7 @@ import { DateTime, Settings } from 'luxon';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import { useContext, useEffect, useMemo } from 'react';
 import { Event, EventsContext } from '../../contexts/EventsContext';
+import { SidebarContext } from '../../contexts/SidebarContext';
 
 const defaultTZ = DateTime.local().zoneName;
 const defaultDateStr = '2024-01-01';
@@ -12,6 +13,7 @@ function getDate(str: string, DateTimeObj: typeof DateTime) {
 }
 
 const Calendar = () => {
+  const { isMobile } = useContext(SidebarContext);
   const { events } = useContext(EventsContext);
 
   const formatEvent = (e: Event) => ({
@@ -36,7 +38,7 @@ const Calendar = () => {
   }, []);
 
   return (
-    <div className="calendar" style={{ width: '100%' }}>
+    <div className="calendar" style={{ width: '100%', marginTop: isMobile ? '20px' : '' }}>
       <BigCalendar
         defaultDate={defaultDate}
         defaultView={Views.MONTH}
