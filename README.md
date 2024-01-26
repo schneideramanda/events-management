@@ -26,7 +26,8 @@ the opportunity to have a close contact to it on the previous companies that I'v
 1. Install dependencies.
 
 ```bash
-npm install
+npm install or
+npm install --legacy-peer-deps
 ```
 
 2. Start the localhost.
